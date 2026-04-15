@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://iobx68bm48pj"]
+
+[ext_resource type="Script" uid="uid://jw07vh311npl" path="res://GUI/wand/wand_menu.gd" id="1_kjdo2"]
+[ext_resource type="PackedScene" uid="uid://d3iyuwbewbvak" path="res://GUI/wand/wand_button.tscn" id="2_kjdo2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ye1nd"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_kjdo2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ejln"]
+bg_color = Color(0.5983088, 0.59830886, 0.5983088, 0)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjdo2"]
+content_margin_right = 9.0
+content_margin_bottom = 6.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 0.75)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[node name="Wand Menu" type="Control" unique_id=2019434661]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+script = ExtResource("1_kjdo2")
+
+[node name="Panel" type="Panel" parent="." unique_id=131981041]
+layout_mode = 0
+offset_left = -472.5
+offset_top = -135.0
+offset_right = 472.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_ye1nd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=319941465]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -472.5
+offset_top = -135.0
+offset_right = 472.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Wand Button" parent="HBoxContainer" unique_id=1862852603 instance=ExtResource("2_kjdo2")]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer" unique_id=1778991234]
+custom_minimum_size = Vector2(810, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_kjdo2")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ejln")
+theme_override_styles/focus = SubResource("StyleBoxFlat_kjdo2")
+draw_focus_border = true
+horizontal_scroll_mode = 2
+vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ScrollContainer" unique_id=995272837]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[connection signal="resized" from="HBoxContainer/Wand Button" to="." method="_on_wand_button_resized"]

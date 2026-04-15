@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://k0m6aildwyxc"]
+
+[ext_resource type="Script" uid="uid://c00d3ib1sc2ax" path="res://GUI/tabmenu/tabmenu_button.gd" id="1_2q6fh"]
+[ext_resource type="Texture2D" uid="uid://ma6acjdmx2ew" path="res://icon.svg" id="1_oknfh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_60wca"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_of4s3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 40
+border_width_top = 20
+border_width_right = 40
+border_width_bottom = 20
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tng8t"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ke2j"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0.1)
+
+[node name="TabMenu Button" type="PanelContainer" unique_id=1862852603]
+offset_right = 644.0
+offset_bottom = 644.0
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_60wca")
+script = ExtResource("1_2q6fh")
+icon = ExtResource("1_oknfh")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1500212933]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=1659677819]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_oknfh")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="." unique_id=2085389788]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_of4s3")
+
+[node name="Button" type="Button" parent="." unique_id=733005476]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_tng8t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4ke2j")
+
+[connection signal="resized" from="." to="." method="_on_self_resized"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

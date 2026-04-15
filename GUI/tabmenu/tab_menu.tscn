@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://40ne8b0dd4tu"]
+
+[ext_resource type="PackedScene" uid="uid://k0m6aildwyxc" path="res://GUI/tabmenu/tabmenu_button.tscn" id="1_35jvm"]
+[ext_resource type="Script" uid="uid://du5l80hqjotck" path="res://GUI/tabmenu/tab_menu.gd" id="1_r4jov"]
+[ext_resource type="Texture2D" uid="uid://cclp02nm4ucyh" path="res://GUI/icons/tabmenu/UI_Fight.png" id="3_xjyh0"]
+[ext_resource type="Texture2D" uid="uid://c0pw13mjkxe85" path="res://GUI/icons/tabmenu/UI_Refine.png" id="4_xjyh0"]
+[ext_resource type="Texture2D" uid="uid://ccwe4ttq026ax" path="res://GUI/icons/tabmenu/UI_Inventory.png" id="5_i5tmk"]
+[ext_resource type="Texture2D" uid="uid://c2nbrsvts2gsx" path="res://GUI/icons/tabmenu/UI_Grimoire.png" id="6_nhqhq"]
+[ext_resource type="Texture2D" uid="uid://ddtucgwu0ja8u" path="res://GUI/icons/tabmenu/UI_Settings.png" id="7_1wlkl"]
+
+[node name="Tab Menu" type="Control" unique_id=2019434661]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+script = ExtResource("1_r4jov")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=256177813]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Fight" parent="VBoxContainer" unique_id=621574283 instance=ExtResource("1_35jvm")]
+layout_mode = 2
+icon = ExtResource("3_xjyh0")
+top = true
+selected = true
+
+[node name="Refine" parent="VBoxContainer" unique_id=1602574701 instance=ExtResource("1_35jvm")]
+layout_mode = 2
+type = 1
+icon = ExtResource("4_xjyh0")
+
+[node name="Inventory" parent="VBoxContainer" unique_id=1988306603 instance=ExtResource("1_35jvm")]
+layout_mode = 2
+type = 2
+icon = ExtResource("5_i5tmk")
+
+[node name="Grimoire" parent="VBoxContainer" unique_id=1494581033 instance=ExtResource("1_35jvm")]
+layout_mode = 2
+type = 3
+icon = ExtResource("6_nhqhq")
+
+[node name="Settings" parent="VBoxContainer" unique_id=1945669409 instance=ExtResource("1_35jvm")]
+layout_mode = 2
+type = 4
+icon = ExtResource("7_1wlkl")
+bottom = true
