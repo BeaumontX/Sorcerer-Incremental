@@ -3,13 +3,26 @@ extends PanelContainer
 class_name  Rune_Button
 
 
-var modulate_amount : float = 0.4
 
-@export var type : Tab_Menu.TabsList
+
+
+
+
+
+var rune_id : int
+@export var rune : Rune :
+	set(new_rune):
+		if new_rune == null:
+			return
+		rune = new_rune
+		icon = rune.icon
+
+
+
 @export var icon : Texture2D :
 	set(newicon):
 		icon = newicon
-		if texture:
+		if texture and newicon != null:
 			SetTexture(newicon)
 
 
@@ -42,11 +55,31 @@ var modulate_amount : float = 0.4
 func _ready() -> void:
 	Setups()
 	
-	SetTexture(icon)
 	SetBorderSize()
 
 func _process(delta: float) -> void:
 	pass
+
+
+
+
+
+
+
+func SetRune() -> void:
+	var spell : Spell = Player.current_spell
+	if (spell.contents.size()-1) >= rune_id:
+		rune = spell.contents[rune_id]
+
+
+
+
+
+
+
+
+
+
 
 
 func SetTexture(newtexture : Texture2D) -> void:
@@ -91,7 +124,7 @@ func Setups() -> void:
 		Setup_Button()
 
 func Setup_Texture() -> void:
-	texture = $MarginContainer/TextureRect
+	texture = $"MarginContainer/TextureRect"
 
 func Setup_Border() -> void:
 	border = $Panel
@@ -107,7 +140,7 @@ signal pressed(type)
 
 
 func _on_button_pressed() -> void:
-	pressed.emit(type)
+	pressed.emit("123")
 	print("button_test")
 
 

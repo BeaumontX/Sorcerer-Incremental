@@ -1,10 +1,9 @@
-extends Node2D
+extends Resource
 class_name Enemy
 
 
+@export var name : String = "Default Name"
 
-
-var health : Health = Health.new()
 @export var element : Elements.list = Elements.list.Arcana
 
 

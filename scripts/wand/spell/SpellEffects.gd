@@ -1,6 +1,19 @@
 extends Resource
 class_name SpellEffects
 
+@export var effects : Dictionary[effect_list, bool] = {
+	effect_list.Burn: false,
+	effect_list.Wet: false,
+	effect_list.Grounded: false,
+	
+	effect_list.Void: false,
+
+	effect_list.TimeDilation: false,
+
+	effect_list.Decay: false,
+
+	effect_list.Arcana: false,
+}
 
 enum effect_list {
 	Burn, #Fire DoT

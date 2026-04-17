@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dqlhd7ijrccvl"]
+
+[ext_resource type="Script" uid="uid://c2kkdahoskif4" path="res://resources/resource_creator.gd" id="1_1uf7r"]
+[ext_resource type="Texture2D" uid="uid://cp03sot4klefe" path="res://GUI/icons/wands/Stick_Wand.png" id="2_1eu14"]
+[ext_resource type="Script" uid="uid://sk6434pg5ooa" path="res://scripts/wand/Wand.gd" id="3_hx1wf"]
+[ext_resource type="Script" uid="uid://dduo1ihegme38" path="res://scripts/wand/Spell.gd" id="4_em0bn"]
+[ext_resource type="Script" uid="uid://0qmv0iycgf6u" path="res://scripts/wand/rune/Rune.gd" id="5_em0bn"]
+[ext_resource type="Resource" uid="uid://c4hal1c4morah" path="res://resources/runes/Attack/Pebble Throw.res" id="6_bwmme"]
+
+[sub_resource type="Resource" id="Resource_7qnuc"]
+script = ExtResource("4_em0bn")
+contents = Array[ExtResource("5_em0bn")]([ExtResource("6_bwmme"), ExtResource("6_bwmme")])
+metadata/_custom_type_script = "uid://dduo1ihegme38"
+
+[sub_resource type="Resource" id="Resource_bwmme"]
+script = ExtResource("3_hx1wf")
+name = "Stick Wand"
+icon = ExtResource("2_1eu14")
+type = 0
+mana_capacity = 100.0
+mana_recharge = 5.0
+cooldown = 10.0
+spells = Array[ExtResource("4_em0bn")]([SubResource("Resource_7qnuc")])
+metadata/_custom_type_script = "uid://sk6434pg5ooa"
+
+[node name="ResourceCreator" type="Node2D" unique_id=1442539103]
+script = ExtResource("1_1uf7r")
+new_wand = SubResource("Resource_bwmme")

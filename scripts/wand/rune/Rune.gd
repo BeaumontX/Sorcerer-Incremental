@@ -3,12 +3,14 @@ extends Resource
 class_name Rune
 
 @export var name : String = "Default Name"
-@export var type : types
+@export var icon : Texture2D
+@export var type : types = types.Error
 enum types {
 	Creation,
 	Attack,
 	Modifier,
-	Auxiliary
+	Auxiliary,
+	Error
 }
 
 
@@ -16,4 +18,5 @@ enum types {
 func GetType() -> types:
 	return type
 
-@abstract func Do_Thing()
+func Do_Thing():
+	pass

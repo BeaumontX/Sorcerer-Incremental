@@ -22,17 +22,11 @@ enum TabsList {
 
 
 
-@export var current_tab : TabsList = TabsList.Fight :
-	set(tab):
-		current_tab = tab
-		SelectTab(tab)
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ConnectSignals()
+	SelectTab(Player.current_tab)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
@@ -41,8 +35,9 @@ func SelectTab(tab : TabsList) -> void:
 	for i in tabs:
 		tabs[i].UnSelect()
 	tabs[tab].Select()
-	print("Tab selected: ", tab)
 
 func ConnectSignals() -> void:
 	for i in tabs:
-		tabs[i].pressed.connect(SelectTab)
+		tabs[i].pressed.connect(func(new_tab): Player.current_tab = new_tab)
+	
+	Player.tab_change.connect(SelectTab)

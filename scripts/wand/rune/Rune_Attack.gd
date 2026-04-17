@@ -2,8 +2,6 @@ extends Rune
 class_name Rune_Attack
 
 
-
-
 @export var stats : SpellStats = SpellStats.new()
 @export var effects : SpellEffects = SpellEffects.new()
 

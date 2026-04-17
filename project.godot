@@ -11,8 +11,11 @@ config_version=5
 [application]
 
 config/name="Sorcerer Incremental"
+run/main_scene="uid://iobx68bm48pj"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="Core_Refinery/Sorcerer_Incremental"
 config/features=PackedStringArray("4.6", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://c2nbrsvts2gsx"
 
 [autoload]
 

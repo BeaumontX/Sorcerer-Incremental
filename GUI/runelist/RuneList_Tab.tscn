@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://cmlm31cg4gnyv"]
+
+[ext_resource type="PackedScene" uid="uid://b2usa6uwxy71a" path="res://GUI/runelist/runelist_button.tscn" id="1_rl1bj"]
+[ext_resource type="Script" uid="uid://yed2syp3f375" path="res://GUI/runelist/runelist_tab.gd" id="1_yguft"]
+
+[node name="RuneList Tab" type="VBoxContainer" unique_id=74755286]
+size_flags_vertical = 3
+script = ExtResource("1_yguft")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=742970714]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Unnamed Tab"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HFlowContainer" type="HFlowContainer" parent="." unique_id=994609829]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RuneList Button" parent="HFlowContainer" unique_id=1862852603 instance=ExtResource("1_rl1bj")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="RuneList Button2" parent="HFlowContainer" unique_id=597468555 instance=ExtResource("1_rl1bj")]
+layout_mode = 2
+
+[node name="RuneList Button3" parent="HFlowContainer" unique_id=35073550 instance=ExtResource("1_rl1bj")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="RuneList Button4" parent="HFlowContainer" unique_id=1799540326 instance=ExtResource("1_rl1bj")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="RuneList Button5" parent="HFlowContainer" unique_id=1212593620 instance=ExtResource("1_rl1bj")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="RuneList Button6" parent="HFlowContainer" unique_id=1445750713 instance=ExtResource("1_rl1bj")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="RuneList Button7" parent="HFlowContainer" unique_id=1695892965 instance=ExtResource("1_rl1bj")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="RuneList Button8" parent="HFlowContainer" unique_id=1898257635 instance=ExtResource("1_rl1bj")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="RuneList Button9" parent="HFlowContainer" unique_id=361141741 instance=ExtResource("1_rl1bj")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="RuneList Button10" parent="HFlowContainer" unique_id=2093737252 instance=ExtResource("1_rl1bj")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[connection signal="finished" from="RichTextLabel" to="." method="_on_rich_text_label_finished" flags=23]
