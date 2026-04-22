@@ -4,7 +4,7 @@ class_name  Rune_Button
 
 
 
-
+static var blank : Texture2D = preload("res://GUI/icons/Slot.png")
 
 
 
@@ -13,9 +13,12 @@ var rune_id : int
 @export var rune : Rune :
 	set(new_rune):
 		if new_rune == null:
+			icon = blank
+			ChangeRune(null)
 			return
 		rune = new_rune
 		icon = rune.icon
+		ChangeRune(rune)
 
 
 
@@ -71,7 +74,10 @@ func SetRune() -> void:
 	if (spell.contents.size()-1) >= rune_id:
 		rune = spell.contents[rune_id]
 
-
+func ChangeRune(rune : Rune) -> void:
+	var spell : Spell = Player.current_spell
+	spell.Change_Rune(rune, rune_id)
+	print("new rune: ", spell.contents[rune_id])
 
 
 
@@ -141,7 +147,9 @@ signal pressed(type)
 
 func _on_button_pressed() -> void:
 	pressed.emit("123")
-	print("button_test")
+	print("rune_button pressed")
+	Player.runelist.show()
+	Player.current_runebutton = self
 
 
 func _on_self_resized() -> void:

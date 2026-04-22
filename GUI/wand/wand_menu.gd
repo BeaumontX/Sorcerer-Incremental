@@ -46,6 +46,7 @@ func _ready() -> void:
 	Resize_ScrollContainer()
 	CreateRuneButtons()
 	FillRuneButtons()
+	
 
 func _process(delta: float) -> void:
 	pass
@@ -66,7 +67,7 @@ func ConnectSignals() -> void:
 func _on_wand_button_resized() -> void:
 	wand_button_size = wand_button.size.x
 	Resize_ScrollContainer()
-	
+	Adjust_Panel()
 
 func _on_container_resized() -> void:
 	if panel == null:
@@ -82,6 +83,7 @@ func Adjust_Panel() -> void:
 	panel.size = container.size
 	panel.position = container.position
 	var border_size : float = wand_button.size.x / 16
+	
 	
 	var newstyle : StyleBoxFlat = panel.get_theme_stylebox("panel").duplicate()
 	newstyle.border_width_top = border_size

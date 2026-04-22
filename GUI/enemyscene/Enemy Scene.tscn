@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://cbfc0lksafe3a"]
+
+[ext_resource type="Script" uid="uid://bbrjydbh7at1a" path="res://GUI/enemyscene/enemy_scene.gd" id="1_v42es"]
+[ext_resource type="Texture2D" uid="uid://b2vmqb0sayk78" path="res://GUI/icons/enemies/Evil Rock.png" id="2_v42es"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_to0uo"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlmom"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.79, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v42es"]
+
+[node name="EnemyScene" type="Control" unique_id=701614701]
+custom_minimum_size = Vector2(623, 623)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_v42es")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1711609629]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.5
+offset_right = 186.5
+offset_bottom = 404.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=2100791489]
+layout_mode = 2
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_bottom = 74
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/MarginContainer" unique_id=2041247976]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_to0uo")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vlmom")
+value = 48.44
+show_percentage = false
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer" unique_id=1633422167]
+layout_mode = 2
+text = "48.44%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=2049670677]
+custom_minimum_size = Vector2(373.8, 373.8)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_v42es")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer" unique_id=1979845908]
+layout_mode = 2
+texture = ExtResource("2_v42es")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="value_changed" from="VBoxContainer/MarginContainer/ProgressBar" to="." method="_on_progress_bar_value_changed"]

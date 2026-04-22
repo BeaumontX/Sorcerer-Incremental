@@ -1,5 +1,9 @@
 extends Node
 
+var runelist : RuneList
+var current_runebutton : Rune_Button
+
+
 var current_tab : Tab_Menu.TabsList :
 	set(new_tab):
 		current_tab = new_tab
@@ -49,9 +53,19 @@ var inventory : Array[Wand] :
 var timer_fight : Timer = Timer.new()
 var timer_refine : Timer = Timer.new()
 
+
+
+var current_enemy : Enemy
+
+
+
+
+
 func _ready() -> void:
 	Load()
+	Setup_Wands()
 	
+	Settings_General.SetLocale(savedata.language)
 	
 	if OS.is_debug_build():
 		TestOnReady()
@@ -74,6 +88,7 @@ func Change_Spell(id : int) -> void:
 
 func Save() -> void:
 	SaveManager.SaveGame(savedata)
+	print("game saved")
 
 func Load() -> void:
 	savedata = SaveManager.GetSave()
@@ -108,11 +123,23 @@ func Recharge(delta) -> void:
 
 func Setup_Wands() -> void:
 	wand_fight.Setup_Spells()
+	add_child(timer_fight)
 	wand_fight.Setup_Timer(timer_fight)
 	
+	timer_fight.timeout.connect(Cast_Fight)
+	print("cd: ", wand_fight.cooldown)
+	
+	
 	wand_refine.Setup_Spells()
+	add_child(timer_refine)
 	wand_refine.Setup_Timer(timer_refine)
 
+func Cast_Fight() -> void:
+	var wand : Wand = wand_fight
+	var spell : Spell = wand_fight.spells[savedata.fight_spell_id]
+	for i in spell.damage_instances:
+		wand.mana_current -= i.stats.mana_cost
+		current_enemy.ReceiveDamage(i.stats.CalcDamage())
 
 
 func TestOnReady() -> void:

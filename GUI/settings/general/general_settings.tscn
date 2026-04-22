@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dai3fbysv57b5"]
+
+[ext_resource type="Script" uid="uid://chuuswkyxbe3s" path="res://GUI/settings/general/general_settings.gd" id="1_jrjx6"]
+[ext_resource type="Script" uid="uid://dijig7ujdr40g" path="res://GUI/settings/general/option_button_language.gd" id="2_7hvjq"]
+[ext_resource type="Script" uid="uid://bjstlxcdibsmt" path="res://GUI/settings/general/option_button_theme.gd" id="2_mswsk"]
+
+[node name="General_Settings" type="Control" unique_id=622128181]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jrjx6")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1330769438]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -234.0
+offset_top = -51.0
+offset_right = 234.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1400516631]
+layout_mode = 2
+
+[node name="Labels" type="MarginContainer" parent="PanelContainer/HBoxContainer" unique_id=717759642]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/Labels" unique_id=456205754]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Label_Theme" type="Label" parent="PanelContainer/HBoxContainer/Labels/VBoxContainer" unique_id=1402686822]
+layout_mode = 2
+size_flags_vertical = 3
+text = "SETTINGS_THEME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Language" type="Label" parent="PanelContainer/HBoxContainer/Labels/VBoxContainer" unique_id=1539960600]
+layout_mode = 2
+size_flags_vertical = 3
+text = "SETTINGS_LANGUAGE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options" type="MarginContainer" parent="PanelContainer/HBoxContainer" unique_id=1826525200]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/HBoxContainer/Options" unique_id=1121341863]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="OptionButton_Theme" type="OptionButton" parent="PanelContainer/HBoxContainer/Options/VBoxContainer2" unique_id=572342667]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+selected = 0
+item_count = 2
+popup/item_0/text = "SETTINGS_THEME_DARK"
+popup/item_0/id = 0
+popup/item_1/text = "SETTINGS_THEME_LIGHT"
+popup/item_1/id = 1
+script = ExtResource("2_mswsk")
+
+[node name="OptionButton_Language" type="OptionButton" parent="PanelContainer/HBoxContainer/Options/VBoxContainer2" unique_id=205314519]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+selected = 0
+item_count = 2
+popup/item_0/text = "SETTINGS_LANGUAGE_RU"
+popup/item_0/id = 0
+popup/item_1/text = "SETTINGS_LANGUAGE_EN"
+popup/item_1/id = 1
+script = ExtResource("2_7hvjq")
+
+[connection signal="item_selected" from="PanelContainer/HBoxContainer/Options/VBoxContainer2/OptionButton_Theme" to="." method="_on_theme_selected"]
+[connection signal="item_selected" from="PanelContainer/HBoxContainer/Options/VBoxContainer2/OptionButton_Language" to="." method="_on_language_selected"]

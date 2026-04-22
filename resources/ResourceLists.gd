@@ -67,10 +67,10 @@ static func SaveWand(wand : Wand) -> void:
 	SaveMessage(result, name)
 
 enum enemies {
-	
+	Evil_Rock,
 }
 const enemies_dict : Dictionary[enemies, String] = {
-	
+	enemies.Evil_Rock: "res://resources/enemies/Evil Rock.res"
 }
 static func SaveEnemy(enemy : Enemy) -> void:
 	var name : String = enemy.name + ".res"

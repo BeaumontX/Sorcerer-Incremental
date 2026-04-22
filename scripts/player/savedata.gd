@@ -20,7 +20,7 @@ var refine_spell_id : int = 0
 
 
 @export var inventory : Array[Wand] = [
-	load(ResourceLists.wands_dict[ResourceLists.wands.Stick_Wand])
+	load(ResourceLists.wands_dict[ResourceLists.wands.Stick_Wand]).duplicate(true)
 ]
 
 func Change_Wand(wand_type : wandtype, id : int) -> void:
@@ -40,3 +40,8 @@ func Change_Spell(wand_type : wandtype, id : int) -> void:
 		wandtype.refine:
 			if id != refine_spell_id:
 				refine_spell_id = id
+
+
+
+@export_storage var theme : Settings_General.themes = Settings_General.themes.dark
+@export_storage var language : Settings_General.languages = Settings_General.languages.ru

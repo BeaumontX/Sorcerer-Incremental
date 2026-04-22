@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://b1qsbew0rkbuu"]
+
+[ext_resource type="Script" uid="uid://c1gcm5pypcofy" path="res://GUI/tabs/main_scene.gd" id="1_ikh67"]
+[ext_resource type="PackedScene" uid="uid://40ne8b0dd4tu" path="res://GUI/tabmenu/tab_menu.tscn" id="1_mbwlv"]
+[ext_resource type="PackedScene" uid="uid://iobx68bm48pj" path="res://GUI/wand/wand_menu.tscn" id="2_ikh67"]
+[ext_resource type="PackedScene" uid="uid://cbfc0lksafe3a" path="res://GUI/enemyscene/Enemy Scene.tscn" id="3_m5idv"]
+[ext_resource type="Resource" uid="uid://c6chhrufsqirb" path="res://resources/enemies/Haunted Dummy.res" id="4_7jxfx"]
+[ext_resource type="PackedScene" uid="uid://fmxh8tj5sgy8" path="res://GUI/runelist/RuneList.tscn" id="5_y6838"]
+[ext_resource type="PackedScene" uid="uid://dai3fbysv57b5" path="res://GUI/settings/general/general_settings.tscn" id="7_m5idv"]
+
+[node name="Main" type="Control" unique_id=994300444]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ikh67")
+
+[node name="Panel" type="Panel" parent="." unique_id=106172512]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tab Menu" parent="." unique_id=2019434661 instance=ExtResource("1_mbwlv")]
+layout_mode = 1
+
+[node name="Fight" type="Control" parent="." unique_id=265405791]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Wand Menu" parent="Fight" unique_id=280671595 instance=ExtResource("2_ikh67")]
+layout_mode = 1
+
+[node name="EnemyScene" parent="Fight" unique_id=701614701 instance=ExtResource("3_m5idv")]
+layout_mode = 1
+enemy = ExtResource("4_7jxfx")
+
+[node name="RuneList" parent="Fight" unique_id=995651857 instance=ExtResource("5_y6838")]
+layout_mode = 1
+
+[node name="Settings" type="Control" parent="." unique_id=446867839]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="General_Settings" parent="Settings" unique_id=622128181 instance=ExtResource("7_m5idv")]
+layout_mode = 1

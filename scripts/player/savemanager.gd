@@ -6,7 +6,7 @@ const SavePath : String = "user://save/"
 const SaveName : String = "save.res"
 
 static func SaveGame(data : SaveData) -> void:
-	ResourceSaver.save(data, SavePath + SaveName)
+	print("saved: ", ResourceSaver.save(data, SavePath + SaveName))
 
 static func GetSave() -> SaveData:
 	if !ResourceLoader.exists(SavePath + SaveName):

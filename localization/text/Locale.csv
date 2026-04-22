@@ -1,0 +1,22 @@
+key,ru,en
+TAB_FIGHT,Бой,Fight
+TAB_REFINE,Расщепление,Refine
+TAB_INVENTORY,Инвентарь,Inventory
+TAB_GRIMOIRE,Гримуар,Grimoire
+TAB_SETTING,Настройки,Settings
+SETTINGS_THEME_DARK,Тёмная Тема,Dark Theme
+SETTINGS_THEME_LIGHT,Светлая Тема,Light Theme
+SETTINGS_LANGUAGE_RU,Русский,Russian
+SETTINGS_LANGUAGE_EN,Анлийский,English
+SETTINGS_THEME,Тема,Theme
+SETTINGS_LANGUAGE,Язык,Language
+RUNETYPE_ATTACK,Атака,Attack
+RUNETYPE_AUXILIARY,Вспомогательная,Auxiliary
+RUNETYPE_MODIFIER,Модификатор,Modifier
+RUNETYPE_CREATION,Создание,Creation
+RUNE,Руна,Rune
+RUNES,Руны,Runes
+RUNELIST_ATTACK,Атакующие Руны,Attack Runes
+RUNELIST_AUXILIARY,Вспомогательные Руны,Auxiliary Runes
+RUNELIST_MODIFIER,Руны-Модификаторы,Modifier Runes
+RUNELIST_CREATION,Создающие Руны,Creation Runes

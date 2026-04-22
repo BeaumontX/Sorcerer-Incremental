@@ -40,7 +40,7 @@ var mana_current : float = mana_capacity
 func Recharge(delta : float) -> void:
 	if mana_current < mana_capacity:
 		mana_current += mana_recharge * delta
-		mana_current = clamp(mana_current, 0, mana_capacity)
+	mana_current = clamp(mana_current, 0, mana_capacity)
 
 func Setup_Spells() -> void:
 	for i in memory:
@@ -48,5 +48,5 @@ func Setup_Spells() -> void:
 			spells.append(Spell.new())
 
 func Setup_Timer(timer : Timer) -> void:
-	timer.one_shot = true
 	timer.wait_time = cooldown
+	timer.start()

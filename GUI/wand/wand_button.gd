@@ -52,7 +52,6 @@ func SetBorderSize() -> void:
 	newstyle.border_width_right = border_size
 	newstyle.border_width_top = border_size
 	newstyle.border_width_bottom = border_size
-	
 	border.add_theme_stylebox_override("panel", newstyle)
 
 func SetMargin(margin : float) -> void:

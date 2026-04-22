@@ -14,7 +14,6 @@ enum types {
 }
 
 
-
 func GetType() -> types:
 	return type
 

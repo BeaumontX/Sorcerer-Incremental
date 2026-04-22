@@ -18,3 +18,6 @@ enum stat_list {
 @export_range(1,4) var level : int = 1
 @export_range(0, 100) var stress : float = 0
 @export var mana_cost : float = 100
+
+func CalcDamage() -> float:
+	return mass * speed + elemental_damage
